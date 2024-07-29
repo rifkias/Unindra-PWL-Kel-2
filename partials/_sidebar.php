@@ -29,6 +29,12 @@
                         </a>
                     </li>
                     <li>
+                        <a href="<?= $uri ?>/php/aboutUs/about-us.php">
+                            <i class="ti-info"></i>
+                            <span>About us</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="logout.php"><span>Logout</span></a>
 
                     </li>
