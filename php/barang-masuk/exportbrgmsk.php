@@ -2,13 +2,15 @@
 <html class="no-js" lang="en">
 
 <?php 
-	include 'cek.php';
-	include '../dbconnect.php';
-	?>
+	include '../../dbconnect.php';
+	include '../../helper.php';
+	$uri = getUri();
+	checkAuth();
+?>
 
 <html>
 <head>
-<title>*Data Stock Bahan</title>
+<title>*Data Barang Masuk</title>
 <link rel="icon" 
       type="image/png" 
       href="favicon.png">
@@ -35,38 +37,39 @@
 
 <body>
 		<div class="container">
-			<h2>STOCK BARANG</h2>
-			<h4>(PERGUDANGAN)</h4>
+			<h2>Transaksi Bahan : Masuk / Kembali</h2>
 				<div class="data-tables datatable-dark">
-					<table id="dataTable3" class="display" style="width:100%"><thead class="thead-dark">
+					<table class="display" id="dataTable3" style="width:100%"><thead class="thead-dark">
 											<tr>
 												<th>No</th>
+												<th>Tanggal</th>
 												<th>Nama Barang</th>
 												<th>Jenis</th>
 												<th>Merk</th>
 												<th>Ukuran</th>
-												<th>Stock</th>
+												<th>Jumlah</th>
 												<th>Satuan</th>
-												<th>Lokasi</th>
+												<th>Keterangan</th>
 												
 												<!--<th>Opsi</th>-->
 											</tr></thead><tbody>
 											<?php 
-											$brgs=mysqli_query($conn,"SELECT * from sstock_brg order by nama ASC");
+											$brg=mysqli_query($conn,"SELECT * from sbrg_masuk sb, sstock_brg st where sb.idx=st.idx order by sb.id ASC");
 											$no=1;
-											while($p=mysqli_fetch_array($brgs)){
+											while($b=mysqli_fetch_array($brg)){
 
 												?>
 												
 												<tr>
 													<td><?php echo $no++ ?></td>
-													<td><?php echo $p['nama'] ?></td>
-													<td><?php echo $p['jenis'] ?></td>
-													<td><?php echo $p['merk'] ?></td>
-													<td><?php echo $p['ukuran'] ?></td>
-													<td><?php echo $p['stock'] ?></td>
-													<td><?php echo $p['satuan'] ?></td>
-													<td><?php echo $p['lokasi'] ?></td>
+													<td><?php $tanggals=$b['tgl']; echo date("d-M-Y", strtotime($tanggals)) ?></td>
+													<td><?php echo $b['nama'] ?></td>
+													<td><?php echo $b['jenis'] ?></td>
+													<td><?php echo $b['merk'] ?></td>
+													<td><?php echo $b['ukuran'] ?></td>
+													<td><?php echo $b['jumlah'] ?></td>
+													<td><?php echo $b['satuan'] ?></td>
+													<td><?php echo $b['keterangan'] ?></td>
 												</tr>		
 												<?php 
 											}

@@ -151,8 +151,8 @@ $uri = getUri();
 			</div>
 		</div>
 
-		<?php include './partials/_footer.php' ?>
 	</div>
+	<?php include './partials/_footer.php' ?>
 
 
 </body>

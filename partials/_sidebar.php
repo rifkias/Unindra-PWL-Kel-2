@@ -1,5 +1,5 @@
 <div class="sidebar-menu">
-    <div class="sidebar-header"> <a href="<?=$uri?>/index.php"><img src="<?= $uri ?>/assets/img/logo1.png" alt="logo1" width="100%"></a>
+    <div class="sidebar-header"> <a href="<?= $uri ?>/index.php"><img src="<?= $uri ?>/assets/img/logo1.png" alt="logo1" width="100%"></a>
     </div>
     <div class="main-menu">
         <div class="menu-inner">
@@ -17,14 +17,16 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" aria-expanded="true">
-                            <i class="ti-layout"></i>
-                            <span>Transaksi Data</span>
+                        <a href="<?= $uri ?>/php/barang-masuk/masuk.php">
+                            <i class="ti-truck"></i>
+                            <span>Barang Masuk</span>
                         </a>
-                        <ul class="collapse">
-                            <li><a href="masuk.php">Barang Masuk / Kembali</a></li>
-                            <li><a href="keluar.php">Barang Keluar</a></li>
-                        </ul>
+                    </li>
+                    <li>
+                        <a href="<?= $uri ?>/php/barang-keluar/keluar.php">
+                            <i class="ti-clipboard"></i>
+                            <span>Barang Keluar</span>
+                        </a>
                     </li>
                     <li>
                         <a href="logout.php"><span>Logout</span></a>
