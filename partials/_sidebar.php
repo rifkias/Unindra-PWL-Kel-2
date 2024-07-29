@@ -35,7 +35,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="logout.php"><span>Logout</span></a>
+                        <a href="<?= $uri ?>/logout.php"><span>Logout</span></a>
 
                     </li>
 
