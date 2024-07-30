@@ -1,11 +1,11 @@
-<?php 
+<!-- < ?php 
     // $uri = "http://pwl.test/p4";
     $uri =  (empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP_HOST]";
     $basePath = basename(dirname($_SERVER['PHP_SELF']));
     if($basePath <> 'index.php'){
         $uri = $uri."/".$basePath;
     }
-?>
+?> -->
 
 <div id="layoutSidenav_nav">
     <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">

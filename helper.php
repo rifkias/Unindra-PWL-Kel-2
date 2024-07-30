@@ -32,6 +32,6 @@ function getDirname()
 
 function checkAuth(){
 	if($_SESSION['role']!="stock"){
-		header("location:".getUri()."/index.php?pesan=belum_login");
+		header("location:".getUri()."/login.php?pesan=belum_login");
 	}
 }

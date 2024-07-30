@@ -96,7 +96,7 @@ checkAuth();
 										<p class="card-text">Hidup itu sudah susah dan kadang banyak masalah. Untuk itulah, terkadang hidup hanya perlu ditertawakan saja Hahaha.</p>
 										<div class="d-flex justify-content-between align-items-center">
 											<div class="btn-group">
-												<a href="<?= $uri ?>/php/aboutUs/202143500780/202143500714_index.php" class="btn btn-sm btn-outline-secondary">View</a>
+												<a href="<?= $uri ?>/php/aboutUs/202143500780" class="btn btn-sm btn-outline-secondary">View</a>
 											</div>
 											<small class="text-muted">9 mins</small>
 										</div>

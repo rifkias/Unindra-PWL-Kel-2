@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,20 +13,27 @@
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 
     <style>
-    div.code {
-        white-space: pre;
-    }
+        div.code {
+            white-space: pre;
+        }
 
-    .biodata-section {
-        margin-bottom: 30px;
-    }
+        .biodata-section {
+            margin-bottom: 30px;
+        }
 
-    .profile-pic {
-        max-width: 150px;
-        border-radius: 50%;
-    }
+        .profile-pic {
+            max-width: 150px;
+            border-radius: 50%;
+        }
     </style>
 </head>
+
+<?php
+include("route.php");
+$route = new phpRouting();
+$filename = $route->getFilename();
+$uri = $route->getUri();
+?>
 
 <body class="sb-nav-fixed">
     <?php include_once('_header.php') ?>
@@ -35,29 +41,23 @@
         <?php include_once('_sidebar.php') ?>
         <div id="layoutSidenav_content">
 
-            <?php
-                include("route.php");
-                $route = new phpRouting();
-                $filename = $route->getFilename();
-            ?>
-
             <main>
-               
+
                 <div class="container-fluid px-4 pt-3">
 
-                    <?php 
-                    if($route->getPath()){
-                        if(!$route->showScript()){
+                    <?php
+                    if ($route->getPath()) {
+                        if (!$route->showScript()) {
                             include($filename);
-                        }else{
-                      
+                        } else {
+
                     ?>
-                    <p>Source Code : </p>
-                    <pre>
+                            <p>Source Code : </p>
+                            <pre>
                       <code class="language-php">
 
                         <!-- <div class="code"> -->
-                          <?php 
+                          <?php
                             echo htmlentities(file_get_contents($filename));
                             ?>
                       <!-- </div> -->
@@ -65,26 +65,25 @@
                     </pre>
 
 
-                    <div class="result">
-                        <p>Result : </p>
-                        <?php 
-                        include($filename);
-                      ?>
+                            <div class="result">
+                                <p>Result : </p>
+                                <?php
+                                include($filename);
+                                ?>
 
-                    </div>
-
-
+                            </div>
 
 
-                    <?php 
-                
+
+
+                    <?php
+
                         }
-                    }else{
+                    } else {
 
                         include($filename);
-
                     }
-                ?>
+                    ?>
                 </div>
             </main>
             <?php include_once("_footer.php") ?>
@@ -96,10 +95,10 @@
     <script src="./dist/js/prism.js"></script>
 
     <script>
-    document.querySelectorAll('div.code').forEach(el => {
-        // then highlight each
-        hljs.highlightElement(el);
-    });
+        document.querySelectorAll('div.code').forEach(el => {
+            // then highlight each
+            hljs.highlightElement(el);
+        });
     </script>
 </body>
 

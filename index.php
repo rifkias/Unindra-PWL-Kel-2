@@ -3,6 +3,7 @@ include 'dbconnect.php';
 include 'helper.php';
 
 $uri = getUri();
+checkAuth()
 ?>
 
 <!doctype html>
